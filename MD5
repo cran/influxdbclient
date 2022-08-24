@@ -1,14 +1,14 @@
-dce56a066e9672ce6393f301b4a3eed2 *DESCRIPTION
+79bf4145819e242a4bd68e7af442abf4 *DESCRIPTION
 130392605f887a6f96e25f2e05adb550 *LICENSE
 4073f1e916cb4f976d6989b210d2a694 *NAMESPACE
-bbfb5fb1600bbbceeaa9e3864ddf9143 *NEWS.md
+b952f4b25bb7f3d9e94eaaae02ec5c6d *NEWS.md
 98899577c43e26bdce42ed238da3b043 *R/api_client.R
 9696c3127c2fcc63b11daa4cc868b3b9 *R/api_response.R
 76b0823f9ccf099080c1ced83a5017d5 *R/dialect.R
 734da279f9085d3a1942875dad9bbe9d *R/health_api.R
 1236db4af98fbb1f0bea83a33f9e4450 *R/health_check.R
 076cf76adf2ebc5df42895c68c025bb5 *R/influxdb_api_client.R
-cdc47f2fa9c70efe30088a28434b9e28 *R/influxdb_client.R
+2629126e1dd444ec6187469b8d4fc43c *R/influxdb_client.R
 15bb9ab35c6b8913bb48f14df392e780 *R/query.R
 0e9d3c8464417b129e7b809f6c95fd6e *R/query_api.R
 1f9084c5bba5bcd98cfd4554afd7a155 *R/ready.R
@@ -16,7 +16,7 @@ adb2e4bdc687b475465b47f22021f1ae *R/ready_api.R
 818569d9a4c54fed6b137f9408199ce3 *R/retry_options.R
 dcb38b830c68320a7cb6b933cb40e09d *R/write_api.R
 8ecaf15ae0b6a8322238b0955c457890 *R/zzz.R
-1fe29e6cbe542f015dad47fe984076d6 *README.md
+0b1d93ff9fd55d9bed3f2d1cbf1ea154 *README.md
 2a79e6776af8664f898c25be0b7a0a7f *man/InfluxDBClient.Rd
 df37f21126265c12446fbbca91eb194b *man/RetryOptions.Rd
 cbed99532ccc695feb24fe42e1c55db3 *tests/testthat.R

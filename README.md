@@ -1,6 +1,6 @@
 # influxdb-client-r
-[![CircleCI](https://circleci.com/gh/influxdata/influxdb-client-r.svg?style=svg)](https://circleci.com/gh/influxdata/influxdb-client-r)
-[![codecov](https://codecov.io/gh/influxdata/influxdb-client-r/branch/master/graph/badge.svg)](https://codecov.io/gh/influxdata/influxdb-client-r)
+[![CircleCI](https://circleci.com/gh/influxdata/influxdb-client-r.svg?style=svg)](https://app.circleci.com/pipelines/github/influxdata/influxdb-client-r)
+[![codecov](https://codecov.io/gh/influxdata/influxdb-client-r/branch/master/graph/badge.svg)](https://app.codecov.io/gh/influxdata/influxdb-client-r)
 
 This repository contains R package for InfluxDB 2.0 client.
 
@@ -20,6 +20,7 @@ This repository contains R package for InfluxDB 2.0 client.
   * [Getting status](#getting-status)
     * [Health](#health-status)
     * [Readiness](#readiness-status)
+  * [Advanced](#advanced)
 * [Known Issues](#known-issues)
 * [Contributing](#contributing)
 * [License](#license)
@@ -36,14 +37,15 @@ The InfluxDB 2.0 client supports:
 
 This section contains links to the client library documentation.
 
-* [Product documentation](https://docs.influxdata.com/influxdb/v2.0/api-guide/client-libraries/), [Getting Started](#usage)
+* [Product documentation](https://docs.influxdata.com/influxdb/v2.0/api-guide/client-libraries/)
+* [Getting Started](#usage)
 * [Examples](#usage)
-* [API Reference](docs/influxdbclient.pdf)
-* [Changelog](CHANGELOG.md)
+* [API Reference](https://cran.r-project.org/package=influxdbclient/influxdbclient.pdf)
+* [Changelog](https://github.com/influxdata/influxdb-client-r/blob/master/CHANGELOG.md)
 
 ## Installing
 
-The package requires R >= 3.3.
+The package requires R >= 3.4.
 
 ### Installing dependencies
 
@@ -62,7 +64,8 @@ install.packages("influxdbclient")
 The latest development version can be installed with
 
 ```r
-remotes::install_github("influxdata/influxdb-client-r") # requires 'remotes' package
+# install.packages("remotes")
+remotes::install_github("influxdata/influxdb-client-r")
 ```
 
 ## Usage
@@ -170,6 +173,14 @@ df1$`_value` %>% ts(freq=168) %>% stl(s.window=13) %>% autoplot()
 or
 ```r
 ts1 %>% ts(freq=168) %>% stl(s.window=13) %>% autoplot()
+```
+
+#### Querying metadata
+
+For queries returning records without time info (listing buckets, tag values etc.), set `POSIXctCol` to `NULL`.
+
+```r
+buckets <- client$query('buckets()', POSIXctCol = NULL)
 ```
 
 ### Writing data
@@ -323,6 +334,19 @@ check <- client$ready()
 ```
 
 Response is a list with status elements (`status`, `started`, `up`) or error.
+
+#### Advanced
+
+The client automatically follows HTTP redirects.
+
+To use the client with proxy, use `set_config` to configure the proxy:
+
+```r
+library(httr)
+httr::set_config(
+  use_proxy(url = "my-proxy", port = 8080, username = "user",password = "password")
+)
+```
 
 ## Known Issues
 
