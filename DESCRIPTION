@@ -1,6 +1,6 @@
 Package: influxdbclient
 Title: 'InfluxDB' 2.x Client
-Version: 0.1.1
+Version: 0.1.2
 Author: Ales Pour <ales.pour@bonitoo.io>
 Maintainer: Ales Pour <ales.pour@bonitoo.io>
 Description: 
@@ -14,6 +14,6 @@ Imports: R6, httr, jsonlite, bit64, nanotime (>= 0.3.0), plyr
 RoxygenNote: 7.1.1
 Suggests: testthat, httptest
 NeedsCompilation: no
-Packaged: 2022-08-24 08:01:59 UTC; alespour
+Packaged: 2022-08-31 16:36:28 UTC; alespour
 Repository: CRAN
-Date/Publication: 2022-08-24 08:20:02 UTC
+Date/Publication: 2022-09-01 09:10:42 UTC
